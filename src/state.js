@@ -53,14 +53,14 @@ class State extends Phaser.State {
         const player = this.player;
 
         this.physics.arcade.collide(player, this.walls);
-        this.physics.arcade.overlap(player, this.stuff, this.collectStuff.bind(this), null, this);
+        this.physics.arcade.overlap(player, this.stuff, this.collectStuff, null, this);
 
 
         const cursors = this.input.keyboard.createCursorKeys();
 
         player.body.velocity.setTo(0, 0);
 
-        const speed = 250;
+        const speed = 150;
         if (cursors.left.isDown) {
             player.body.velocity.x = -speed;
             player.animations.play("left");
